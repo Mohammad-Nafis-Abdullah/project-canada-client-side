@@ -1,0 +1,29 @@
+.topNavBar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "brand search side";
+  align-items: center;
+  align-content: center;
+}
+
+.topBranding {
+  grid-area: brand;
+}
+
+.topSearchBar {
+  grid-area: search;
+}
+
+.topSideBar {
+  grid-area: side;
+}
+
+
+@media screen and (max-width: 600px) {
+  .topNavBar {
+    grid-template-areas:
+      "brand . side"
+      "search search search";
+  }
+}
