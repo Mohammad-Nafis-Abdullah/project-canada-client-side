@@ -22,7 +22,7 @@ export default function Navbar() {
 
                     <div className="inline-flex items-center gap-3">
                         <img src="/logo.png" alt="logo" className="w-10" />
-                        <span className="font-bold">site name</span>
+                        <span className="font-bold">Quick Startup</span>
                     </div>
 
                     {/* <ul className="hidden 2xl:inline-flex w-full gap-3 justify-center items-center p-0 px-0"> */}
