@@ -76,9 +76,9 @@ function Search() {
                 <option disabled selected>
                     Filter
                 </option>
-                <option>Sci-fi</option>
-                <option>Drama</option>
-                <option>Action</option>
+                <option>Ontario</option>
+                <option>Albarta</option>
+                <option>Admonton</option>
             </select>
             <div className="indicator">
                 <button className="btn btn-sm btn-outline join-item cursor-pointer">
