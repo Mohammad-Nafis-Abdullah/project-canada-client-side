@@ -1,4 +1,4 @@
-.topNavBar {
+/* .topNavBar {
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-template-areas:
@@ -26,4 +26,4 @@
       "brand . side"
       "search search search";
   }
-}
+} */

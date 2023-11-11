@@ -1,8 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { RiPhoneFill } from "react-icons/ri";
 import { FaUserLock } from "react-icons/fa";
 import { GrMenu } from "react-icons/gr";
 import "./navbar.css";
+import Menus from "./Menus";
+import { Navbar_data } from "./data";
 
 const phoneNumber = "+8801813362385";
 
@@ -10,20 +13,28 @@ export default function Navbar() {
     return (
         <nav className="shadow">
             <SecondaryNav />
-            <div className="bg-gray-800 p-3">
-                <section className="bg-gray-900 p-3 rounded">
-                    <div className="max-w-7xl mx-auto grid topNavBar gap-5">
-                        {/* site name and icon */}
-                        <div className="topBranding font-bold text-2xl italic text-amber-400">
-                            Site Name
-                        </div>
+            <section className="px-3 py-4 bg-yellow-400">
+                <div className="max-w-7xl mx-auto topNavBar flex items-center justify-between">
+                    {/* site name and icon */}
+                    {/* <div className="topBranding font-bold text-xl italic text-black w-40 bdr">
+                        Site Name
+                    </div> */}
 
-                        <Search />
-
-                        <NavSideBar />
+                    <div className="inline-flex items-center gap-3">
+                        <img src="/logo.png" alt="logo" className="w-10" />
+                        <span className="font-bold">site name</span>
                     </div>
-                </section>
-            </div>
+
+                    {/* <ul className="hidden 2xl:inline-flex w-full gap-3 justify-center items-center p-0 px-0"> */}
+                    {/* Sidebar content here */}
+                    {/* <Menus data={Navbar_data} /> */}
+                    {/* </ul> */}
+
+                    <Search />
+
+                    <NavSideBar />
+                </div>
+            </section>
         </nav>
     );
 }
@@ -56,12 +67,12 @@ function Search() {
             <div>
                 <div>
                     <input
-                        className="w-full sm:max-w-sm input input-bordered join-item placeholder:font-bold placeholder:text-gray-900/50"
+                        className="w-full sm:max-w-sm input input-sm input-bordered join-item placeholder:font-bold placeholder:text-gray-900/50"
                         placeholder="Search"
                     />
                 </div>
             </div>
-            <select className="select select-bordered join-item">
+            <select className="select select-sm select-bordered join-item">
                 <option disabled selected>
                     Filter
                 </option>
@@ -70,7 +81,7 @@ function Search() {
                 <option>Action</option>
             </select>
             <div className="indicator">
-                <button className="btn btn-primary join-item cursor-pointer">
+                <button className="btn btn-sm btn-outline join-item cursor-pointer">
                     Search
                 </button>
             </div>
@@ -96,10 +107,8 @@ function NavSideBar() {
             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
                 {/* Page content here */}
-                <label htmlFor="my-drawer" className="drawer-button">
-                    <GrMenu
-                        className={`btn ring-2 ring-gray-900 btn-square btn-sm p-1`}
-                    />
+                <label htmlFor="my-drawer">
+                    <GrMenu className={`w-10 h-10 p-1`} />
                 </label>
             </div>
             <div className="drawer-side">
@@ -110,26 +119,7 @@ function NavSideBar() {
                 ></label>
                 <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
                     {/* Sidebar content here */}
-
-                    <div className="dropdown dropdown-hover">
-                        <label tabIndex={0}>
-                            Hover
-                        </label>
-                        <ul
-                            tabIndex={0}
-                            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-                        >
-                            <li>
-                                <a>Item 1</a>
-                            </li>
-                            <li>
-                                <a>Item 2</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <li>
-                        <a>Sidebar Item 2</a>
-                    </li>
+                    <Menus data={Navbar_data} />
                 </ul>
             </div>
         </div>
