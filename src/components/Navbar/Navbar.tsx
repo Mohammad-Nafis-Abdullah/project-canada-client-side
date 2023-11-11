@@ -7,7 +7,7 @@ import "./navbar.css";
 import Menus from "./Menus";
 import { Navbar_data } from "./data";
 
-const phoneNumber = "+8801813362385";
+const phoneNumber = "+880xxxxxxxxxx";
 
 export default function Navbar() {
     return (
@@ -45,7 +45,7 @@ function SecondaryNav() {
             <section className="max-w-7xl mx-auto py-1 flex justify-between items-center px-3">
                 {/* phone number with call linked */}
                 <a
-                    href={`tel:{phoneNumber}`}
+                    href={`tel:${phoneNumber}`}
                     className="inline-flex gap-x-1 items-center"
                 >
                     <RiPhoneFill className="w-5 h-5 p-1 rounded-full bg-green-500" />
