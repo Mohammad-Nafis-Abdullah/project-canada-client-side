@@ -2,15 +2,19 @@
 
 import Link from "next/link";
 import { MENUS_SCHEMA, NAVBAR_SCHEMA } from "./data";
-import { useState } from "react";
+import { useId, useState } from "react";
 import { usePathname } from "next/navigation";
 import { FaPlus } from "react-icons/fa";
 
+
 export default function Menus({ data }: { data: NAVBAR_SCHEMA }) {
+    const uid = ()=> {
+        return Date.now() * Math.random();
+    }
     return (
         <>
             {data.map((menu, i) => (
-                <Menu menu={menu} key={i} />
+                <Menu menu={menu} key={uid()} />
             ))}
         </>
     );

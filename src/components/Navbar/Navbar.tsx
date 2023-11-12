@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { RiPhoneFill } from "react-icons/ri";
+import { MdClose } from "react-icons/md";
 import { FaUserLock } from "react-icons/fa";
 import { GrMenu } from "react-icons/gr";
 import "./navbar.css";
@@ -108,18 +109,29 @@ function NavSideBar() {
             <div className="drawer-content">
                 {/* Page content here */}
                 <label htmlFor="my-drawer">
-                    <GrMenu className={`w-10 h-10 p-1`} />
+                    <GrMenu className={`w-10 h-10 p-1 cursor-pointer active:scale-95`} />
                 </label>
             </div>
-            <div className="drawer-side">
+            <div className="drawer-side z-50">
                 <label
-                    htmlFor="my-drawer"
-                    aria-label="close sidebar"
+                    // htmlFor="my-drawer"
+                    // aria-label="close sidebar"
                     className="drawer-overlay"
-                ></label>
-                <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                >
+                    {/* <MdClose className="w-10 h-10 absolute top-0 right-0 z-50" /> */}
+                </label>
+                <ul className="menu p-4 w-80 min-h-full bg-white text-base-content">
+                    <label
+                        htmlFor="my-drawer"
+                        aria-label="close sidebar"
+                        className="drawer-overlay"
+                    >
+                        <MdClose className="w-10 h-10 absolute top-4 left-4 cursor-pointer bg-neutral text-yellow-400 rounded active:scale-95" />
+                    </label>
                     {/* Sidebar content here */}
-                    <Menus data={Navbar_data} />
+                    <div className="mt-14">
+                        <Menus data={Navbar_data} />
+                    </div>
                 </ul>
             </div>
         </div>
