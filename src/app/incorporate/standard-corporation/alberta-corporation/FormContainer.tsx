@@ -16,13 +16,13 @@ import Form6 from "@/components/Incorporation/StandardCorporation/AlbertaCorpora
 import Form7 from "@/components/Incorporation/StandardCorporation/AlbertaCorporation/Form7";
 
 const steps = [
-    "Select campaign settings",
-    "Create an ad group",
-    "Create an ad",
-    "Select campaign settings",
-    "Create an ad group",
-    "Create an ad",
-    "Select campaign settings",
+    "Corporation Name",
+    "Corporation's Address",
+    "Agent for Service",
+    "Director List",
+    "Share Structure",
+    "Share Holder",
+    "Corporation's Officer(s)",
 ];
 
 export default function FormContainer() {
@@ -140,7 +140,7 @@ export default function FormContainer() {
                             color="inherit"
                             variant="outlined"
                             disabled={activeStep === 0}
-                            onClick={()=> {
+                            onClick={() => {
                                 handleBack();
                             }}
                             sx={{ mr: 1 }}
