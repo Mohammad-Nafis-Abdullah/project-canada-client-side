@@ -17,57 +17,57 @@ export const Navbar_data: NAVBAR_SCHEMA = [
                 children: [
                     {
                         name: "Ontario Corporation",
-                        url: "ontario-corporation",
+                        url: "incorporate/standard-corporation/ontario-corporation",
                         children: [],
                     },
                     {
                         name: "BC Corporation",
-                        url: "bc-corporation",
+                        url: "incorporate/standard-corporation/bc-corporation",
                         children: [],
                     },
                     {
                         name: "Alberta Corporation",
-                        url: "alberta-corporation",
+                        url: "incorporate/standard-corporation/alberta-corporation",
                         children: [],
                     },
                     {
                         name: "Federal Corporation",
-                        url: "federal-corporation",
+                        url: "incorporate/standard-corporation/federal-corporation",
                         children: [],
                     },
                     {
                         name: "Quebec Corporation",
-                        url: "quebec-corporation",
+                        url: "incorporate/standard-corporation/quebec-corporation",
                         children: [],
                     },
                     {
                         name: "SK Corporation",
-                        url: "sk-corporation",
+                        url: "incorporate/standard-corporation/sk-corporation",
                         children: [],
                     },
                     {
                         name: "NB Corporation",
-                        url: "nb-corporation",
+                        url: "incorporate/standard-corporation/nb-corporation",
                         children: [],
                     },
                     {
                         name: "Manitoba Corporation",
-                        url: "manitoba-corporation",
+                        url: "incorporate/standard-corporation/manitoba-corporation",
                         children: [],
                     },
                     {
                         name: "NL Corporation",
-                        url: "nl-corporation",
+                        url: "incorporate/standard-corporation/nl-corporation",
                         children: [],
                     },
                     {
                         name: "NS Corporation",
-                        url: "ns-corporation",
+                        url: "incorporate/standard-corporation/ns-corporation",
                         children: [],
                     },
                     {
                         name: "PEI Corporation",
-                        url: "pei-corporation",
+                        url: "incorporate/standard-corporation/pei-corporation",
                         children: [],
                     },
                 ],
