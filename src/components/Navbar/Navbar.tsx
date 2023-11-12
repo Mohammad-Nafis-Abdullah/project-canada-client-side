@@ -23,7 +23,10 @@ export default function Navbar() {
 
                     <div className="inline-flex items-center gap-3">
                         <img src="/logo.png" alt="logo" className="w-10" />
-                        <span className="font-bold">Quick Startup</span>
+                        <span className="flex flex-col">
+                            <span className="font-bold">Quick Startup</span>
+                            <span className="uppercase tracking-[0.2em] text-xs">business registry inc.</span>
+                        </span>
                     </div>
 
                     {/* <ul className="hidden 2xl:inline-flex w-full gap-3 justify-center items-center p-0 px-0"> */}
@@ -109,7 +112,9 @@ function NavSideBar() {
             <div className="drawer-content">
                 {/* Page content here */}
                 <label htmlFor="my-drawer">
-                    <GrMenu className={`w-10 h-10 p-1 cursor-pointer active:scale-95`} />
+                    <GrMenu
+                        className={`w-10 h-10 p-1 cursor-pointer active:scale-95`}
+                    />
                 </label>
             </div>
             <div className="drawer-side z-50">
