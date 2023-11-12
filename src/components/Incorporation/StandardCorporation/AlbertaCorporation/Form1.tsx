@@ -6,7 +6,7 @@ const Form1 = () => {
     const [corpType, setCorpType] = useState("");
 
     return (
-        <form className="bdr py-10 space-y-10">
+        <form className="py-10 space-y-10">
             <h1 className="text-2xl font-bold text-center">
                 Corporation Name
             </h1>
