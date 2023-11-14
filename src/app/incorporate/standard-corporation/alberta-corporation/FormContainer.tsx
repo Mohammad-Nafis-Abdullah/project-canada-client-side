@@ -80,11 +80,11 @@ export default function FormContainer() {
                     const labelProps: {
                         optional?: React.ReactNode;
                     } = {};
-                    if (isStepOptional(index)) {
-                        labelProps.optional = (
-                            <Typography variant="caption">Optional</Typography>
-                        );
-                    }
+                    // if (isStepOptional(index)) {
+                    //     labelProps.optional = (
+                    //         <Typography variant="caption">Optional</Typography>
+                    //     );
+                    // }
                     if (isStepSkipped(index)) {
                         stepProps.completed = false;
                     }
@@ -136,33 +136,40 @@ export default function FormContainer() {
                         }
                     })()}
                     <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-                        <Button
-                            color="inherit"
-                            variant="outlined"
+                        <button
+                            className="btn btn-sm btn-outline rounded-sm"
                             disabled={activeStep === 0}
                             onClick={() => {
                                 handleBack();
                             }}
-                            sx={{ mr: 1 }}
                         >
                             Back
-                        </Button>
+                        </button>
                         <Box sx={{ flex: "1 1 auto" }} />
                         {/* {isStepOptional(activeStep) && (
             <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
                 Skip
             </Button>
             )} */}
-                        <Button
-                            variant="outlined"
-                            onClick={() => {
-                                handleNext();
-                            }}
-                        >
-                            {activeStep === steps.length - 1
-                                ? "Finish"
-                                : "Next"}
-                        </Button>
+                        {activeStep === steps.length - 1 ? (
+                            <button
+                                className="btn btn-sm btn-neutral rounded-sm"
+                                onClick={() => {
+                                    handleNext();
+                                }}
+                            >
+                                Finish
+                            </button>
+                        ) : (
+                            <button
+                                className="btn btn-sm btn-outline rounded-sm"
+                                onClick={() => {
+                                    handleNext();
+                                }}
+                            >
+                                Next
+                            </button>
+                        )}
                     </Box>
                 </React.Fragment>
             )}

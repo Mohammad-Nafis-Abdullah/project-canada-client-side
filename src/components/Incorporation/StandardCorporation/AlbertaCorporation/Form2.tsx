@@ -1,3 +1,5 @@
+"use client";
+
 export default function Form2() {
     return (
         <form className="py-10 space-y-10">

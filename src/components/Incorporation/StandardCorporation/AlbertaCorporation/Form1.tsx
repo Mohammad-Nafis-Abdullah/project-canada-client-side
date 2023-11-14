@@ -88,7 +88,7 @@ const Form1 = () => {
             </div>
             <div className="flex flex-col gap-3">
                 <h3 className="font-bold">Select a legal suffix :</h3>
-                <select className="select select-bordered w-full max-w-sm bg-slate-900/10 min-w-0 font-bold text-gray-500 text-sm">
+                <select defaultValue={'--select--'} className="select select-bordered w-full max-w-sm bg-slate-900/10 min-w-0 font-bold text-gray-500 text-sm">
                     <option value="">--select--</option>
                     <option value="Ltd.">Ltd.</option>
                     <option value="Inc.">Inc.</option>

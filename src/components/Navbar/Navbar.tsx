@@ -25,7 +25,9 @@ export default function Navbar() {
                         <img src="/logo.png" alt="logo" className="w-10" />
                         <span className="flex flex-col">
                             <span className="font-bold">Quick Startup</span>
-                            <span className="uppercase tracking-[0.2em] text-xs">business registry inc.</span>
+                            <span className="uppercase tracking-[0.2em] text-xs">
+                                business registry inc.
+                            </span>
                         </span>
                     </div>
 
@@ -76,10 +78,11 @@ function Search() {
                     />
                 </div>
             </div>
-            <select className="select select-sm select-bordered join-item">
-                <option disabled selected>
-                    Filter
-                </option>
+            <select
+                defaultValue={"Filter"}
+                className="select select-sm select-bordered join-item"
+            >
+                <option>Filter</option>
                 <option>Ontario</option>
                 <option>Albarta</option>
                 <option>Admonton</option>
