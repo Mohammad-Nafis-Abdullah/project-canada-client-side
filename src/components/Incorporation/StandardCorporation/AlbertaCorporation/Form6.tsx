@@ -1,8 +1,9 @@
 "use client";
 
 import Modal from "@/components/Modal/Modal";
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { useState } from "react";
+import { FaRegWindowClose } from "react-icons/fa";
 
 export default function Form6() {
     return (
@@ -163,13 +164,88 @@ export default function Form6() {
                     + Add Shareholder
                 </Modal.Button>
                 <Modal.Body>
-                    <div className="bg-white w-full max-w-sm h-80">
-                        <Modal.Button
-                            className="btn bg-gray-950 text-white font-bold rounded hover:bg-gray-950"
-                            type="close"
-                        >
-                            close
-                        </Modal.Button>
+                    <div className="bg-white w-full max-w-xl h-[90vh] rounded">
+                        <div className="shadow px-1 py-0.5 flex items-center justify-between">
+                            <h3 className="font-bold ml-2">
+                                Add new shareholder
+                            </h3>
+                            <Modal.Button className="" type="close">
+                                <FaRegWindowClose className="h-7 w-7 active:scale-95 cursor-pointer" />
+                            </Modal.Button>
+                        </div>
+                        <article className="overflow-y-auto p-3">
+                            <form className="">
+                                <section className="grid grid-cols-2 gap-x-8 gap-y-3">
+                                    <label
+                                        htmlFor="first-name"
+                                        className="flex flex-col"
+                                    >
+                                        {/* input title */}
+                                        <span className="font-bold text-gray-950/80">
+                                            First Name :{" "}
+                                            <span className="font-bold text-red-600">
+                                                *
+                                            </span>
+                                        </span>
+
+                                        <input
+                                            id="first-name"
+                                            name="first-name"
+                                            className="ring-2 rounded p-1"
+                                            type="text"
+                                        />
+                                        {/* input error */}
+                                        <span className="text-red-600 text-sm">
+                                            this is error message
+                                        </span>
+                                    </label>
+                                    <label
+                                        htmlFor="middle-name"
+                                        className="flex flex-col"
+                                    >
+                                        {/* input title */}
+                                        <span className="font-bold text-gray-950/80">
+                                            Middle Name :{" "}
+                                        </span>
+
+                                        <input
+                                            id="middle-name"
+                                            name="middle-name"
+                                            className="ring-2 rounded p-1"
+                                            type="text"
+                                        />
+                                        {/* input error */}
+                                        <span className="text-red-600 text-sm">
+                                            this is error message
+                                        </span>
+                                    </label>
+                                    <label
+                                        htmlFor="last-name"
+                                        className="flex flex-col gap-0.5"
+                                    >
+                                        {/* input title */}
+                                        <span className="font-bold text-gray-950/80">
+                                            Last Name :{" "}
+                                            <span className="font-bold text-red-600">
+                                                *
+                                            </span>
+                                        </span>
+
+                                        <input
+                                            id="last-name"
+                                            name="last-name"
+                                            className="ring-2 rounded p-1"
+                                            type="text"
+                                        />
+                                        {/* input error */}
+                                        <span className="text-red-600 text-xs">
+                                            this is error message
+                                        </span>
+                                    </label>
+                                </section>
+                                <div className="divider"/>
+                            </form>
+                        </article>
                     </div>
                 </Modal.Body>
             </Modal>
