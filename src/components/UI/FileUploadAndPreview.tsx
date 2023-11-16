@@ -91,7 +91,7 @@ const FileUploadAndPreview = ({
             <section className="inline-flex gap-3">
                 {[...files]?.map((file: FILE_SCHEMA, i: number) => {
                     return (
-                        <span key={i} className="relative">
+                        <span key={i} className="relative cursor-pointer">
                             {file.type.split("/")[0] === "image" ? (
                                 <img
                                     src={getUrl(file)}
@@ -112,7 +112,7 @@ const FileUploadAndPreview = ({
                                         return newFiles;
                                     });
                                 }}
-                                className="text-red-600 bg-white absolute top-2 right-2 w-6 h-6 p-0.5 rounded cursor-pointer"
+                                className="text-red-600 bg-white absolute top-2 right-2 w-6 h-6 p-0.5 rounded"
                             />
                         </span>
                     );
