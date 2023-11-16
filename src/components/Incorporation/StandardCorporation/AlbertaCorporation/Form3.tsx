@@ -1,34 +1,10 @@
 "use client";
 
+import FileUploadAndPreview from "@/components/UI/FileUploadAndPreview";
 /* eslint-disable @next/next/no-img-element */
-import { useState } from "react";
-import { FaTrashAlt } from "react-icons/fa";
 import * as React from "react";
-import { styled } from "@mui/material/styles";
-import Button from "@mui/material/Button";
-import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-
-const VisuallyHiddenInput = styled("input")({
-    clip: "rect(0 0 0 0)",
-    clipPath: "inset(50%)",
-    height: 1,
-    overflow: "hidden",
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    whiteSpace: "nowrap",
-    width: 1,
-});
 
 export default function Form3() {
-    const [files, setFiles] = useState<unknown>([]);
-
-    const getUrl = <T,>(file: T) => {
-        const path = URL.createObjectURL(file as Blob);
-        console.log({ path });
-        return path;
-    };
-
     return (
         <form className=" py-10 space-y-10">
             <h1 className="text-2xl font-bold text-center">
@@ -174,49 +150,11 @@ export default function Form3() {
                 <h3 className="font-bold">
                     {"Valid Alberta Photo ID or Passport (Required) :"}
                 </h3>
-                <label
-                    htmlFor="photo-id"
-                    className="inline-flex items-center gap-3 "
-                >
-                    <Button
-                        component="label"
-                        variant="contained"
-                        // color="success"
-                        startIcon={<CloudUploadIcon />}
-                    >
-                        Upload file <span className="font-bold ml-2 bg-white text-sky-600 h-5 w-5 flex items-center justify-center rounded">{[...(files as unknown[])].length||''}</span>
-                        <VisuallyHiddenInput
-                            id="photo-id"
-                            type="file"
-                            accept=".png, .jpg, .jpeg, .img"
-                            multiple
-                            onChange={(e) => setFiles(e.target.files)}
-                        />
-                    </Button>
-                </label>
-                <section className="inline-flex gap-3">
-                    {[...(files as unknown[])]?.map((file, i) => {
-                        return (
-                            <span key={i} className="relative">
-                                <img
-                                    src={getUrl(file)}
-                                    alt="img"
-                                    className="w-40 h-40 object-cover rounded"
-                                />
-                                <FaTrashAlt
-                                    onClick={() => {
-                                        setFiles((prev: unknown[]) => {
-                                            const newFiles = [...prev];
-                                            newFiles.splice(i, 1);
-                                            return newFiles;
-                                        });
-                                    }}
-                                    className="text-red-600 bg-white absolute top-2 right-2 w-6 h-6 p-0.5 rounded cursor-pointer"
-                                />
-                            </span>
-                        );
-                    })}
-                </section>
+                <FileUploadAndPreview
+                    accept=".png, .jpg, .jpeg, .img"
+                    multiple={true}
+                    onUpload={(files) => console.log(files)}
+                />
             </div>
         </form>
     );

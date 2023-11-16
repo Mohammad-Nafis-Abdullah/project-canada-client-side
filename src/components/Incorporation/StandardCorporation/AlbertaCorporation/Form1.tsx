@@ -1,5 +1,6 @@
 "use client";
 
+import FileUploadAndPreview from "@/components/UI/FileUploadAndPreview";
 import { ChangeEvent, forwardRef, useState } from "react";
 
 const Form1 = () => {
@@ -7,9 +8,7 @@ const Form1 = () => {
 
     return (
         <form className="py-10 space-y-10">
-            <h1 className="text-2xl font-bold text-center">
-                Corporation Name
-            </h1>
+            <h1 className="text-2xl font-bold text-center">Corporation Name</h1>
             <div className="flex flex-col gap-3">
                 <h3 className="font-bold">
                     Is this a named or numbered corporation?
@@ -59,10 +58,10 @@ const Form1 = () => {
                             <span className="font-bold text-gray-500 text-sm">
                                 Please add your NUANS report
                             </span>
-                            <input
-                                type="file"
-                                id="nuans-report"
-                                className="file-input file-input-sm file-input-bordered file-input-warning w-full max-w-xs"
+                            <FileUploadAndPreview
+                                accept=".pdf, .doc"
+                                multiple={true}
+                                onUpload={(file) => console.log(file)}
                             />
                         </label>
                         <div className="divider m-0 w-96" />
@@ -88,7 +87,10 @@ const Form1 = () => {
             </div>
             <div className="flex flex-col gap-3">
                 <h3 className="font-bold">Select a legal suffix :</h3>
-                <select defaultValue={'--select--'} className="select select-bordered w-full max-w-sm bg-slate-900/10 min-w-0 font-bold text-gray-500 text-sm">
+                <select
+                    defaultValue={"--select--"}
+                    className="select select-bordered w-full max-w-sm bg-slate-900/10 min-w-0 font-bold text-gray-500 text-sm"
+                >
                     <option value="">--select--</option>
                     <option value="Ltd.">Ltd.</option>
                     <option value="Inc.">Inc.</option>
