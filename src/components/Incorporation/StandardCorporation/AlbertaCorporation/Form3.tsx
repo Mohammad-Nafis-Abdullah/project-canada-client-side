@@ -184,7 +184,7 @@ export default function Form3() {
                         // color="success"
                         startIcon={<CloudUploadIcon />}
                     >
-                        Upload file <span className="font-bold ml-2">{[...(files as unknown[])].length||''}</span>
+                        Upload file <span className="font-bold ml-2 bg-white text-sky-600 h-5 w-5 flex items-center justify-center rounded">{[...(files as unknown[])].length||''}</span>
                         <VisuallyHiddenInput
                             id="photo-id"
                             type="file"
