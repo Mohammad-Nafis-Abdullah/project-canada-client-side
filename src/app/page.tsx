@@ -1,5 +1,9 @@
 // import Image from 'next/image'
 
+import TopSlider from "@/components/home/TopSlider";
+
 export default function Home() {
-    return <div className="">this is home ....</div>;
+    return <div className="">
+        <TopSlider />
+    </div>;
 }
