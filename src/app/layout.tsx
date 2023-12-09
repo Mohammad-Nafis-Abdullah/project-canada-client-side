@@ -17,9 +17,14 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" data-theme="light">
-            <body className={`${inter.className} min-h-screen bg-no-repeat bg-cover bg-center`} style={{
-                // backgroundImage: `url('./site-bg.gif')`,
-            }}>
+            <body
+                className={`${inter.className} min-h-screen bg-no-repeat bg-cover bg-center`}
+                style={
+                    {
+                        // backgroundImage: `url('./site-bg.gif')`,
+                    }
+                }
+            >
                 <Navbar />
                 {children}
             </body>
