@@ -56,7 +56,7 @@ const TopSlider = () => {
                 })}
             </Slider>
 
-            <section className="absolute top-0 bottom-0 right-0 left-0 bg-black/50 flex items-end justify-center sm:justify-end px-3 sm:p-10">
+            <section className="absolute top-0 bottom-0 right-0 left-0 bg-black/50 flex items-center justify-center sm:justify-end px-3 sm:p-10">
                 <QuickBusinessWizardForm />
             </section>
         </div>

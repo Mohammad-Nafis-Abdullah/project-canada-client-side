@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
+import Switch from "../UI/Switch";
 
 type Option_type =
     | "corporate"
@@ -14,9 +15,9 @@ const QuickBusinessWizardForm = () => {
     const [option, setOption] = useState<Option_type>("corporate");
     const [path, setPath] = useState<Option_type[]>([]);
 
-    const pushToPath = (current: Option_type) => {
+    const pushToPath = (current: Option_type,index:number) => {
         const array = [...path];
-        array.push(current);
+        array[index-1]=current;
         setPath(array);
     };
 
@@ -27,13 +28,16 @@ const QuickBusinessWizardForm = () => {
     };
 
     return (
-        <div className="bg-white rounded p-5">
+        <div className="bg-white rounded p-5 flex flex-col">
             <h3 className="text-xl font-bold mb-2">Type of Business :</h3>
             <section className="flex gap-3 justify-center">
                 <button
-                    onClick={() => setOption("corporate")}
+                    onClick={() => {
+                        setPath(["corporate"]);
+                        setOption("corporate");
+                    }}
                     className={`${
-                        option === "corporate"
+                        path[0] === "corporate"
                             ? "btn_primary_fill"
                             : "btn_primary"
                     }`}
@@ -41,9 +45,12 @@ const QuickBusinessWizardForm = () => {
                     corporate
                 </button>
                 <button
-                    onClick={() => setOption("sole_proprietorship")}
+                    onClick={() => {
+                        setPath(["sole_proprietorship"]);
+                        setOption("sole_proprietorship");
+                    }}
                     className={`${
-                        option === "sole_proprietorship"
+                        path[0] === "sole_proprietorship"
                             ? "btn_primary_fill"
                             : "btn_primary"
                     }`}
@@ -51,9 +58,12 @@ const QuickBusinessWizardForm = () => {
                     sole_proprietorship
                 </button>
                 <button
-                    onClick={() => setOption("partnership")}
+                    onClick={() => {
+                        setPath(["partnership"]);
+                        setOption("partnership");
+                    }}
                     className={`${
-                        option === "partnership"
+                        path[0] === "partnership"
                             ? "btn_primary_fill"
                             : "btn_primary"
                     }`}
@@ -61,13 +71,84 @@ const QuickBusinessWizardForm = () => {
                     partnership
                 </button>
             </section>
-            <section className="min-h-[100px] bg-slate-300 rounded p-5 mt-3"></section>
+            <section className="grow bg-slate-300 rounded p-5 mt-3">
+                <ShowPath
+                    paths={path}
+                    setPath={setPath}
+                    setOption={setOption}
+                />
+                <Switch case_key={option}>
+                    <Switch.Case case_value={["corporate"]}>
+                        <h3 className="font-bold mb-2 text-gray-800">
+                            Do you want ?
+                        </h3>
+                        <section className="flex gap-3 justify-center">
+                            <button
+                                onClick={() => {
+                                    pushToPath("profitable_corporation",2);
+                                    setOption("profitable_corporation");
+                                }}
+                                className={`${
+                                    option === "profitable_corporation"
+                                        ? "btn_primary_fill"
+                                        : "btn_primary"
+                                } btn-sm`}
+                            >
+                                Profitable Corporation
+                            </button>
+                            <button
+                                onClick={() => {
+                                    pushToPath("non_profitable_corporation",2);
+                                    setOption("non_profitable_corporation");
+                                }}
+                                className={`${
+                                    option === "non_profitable_corporation"
+                                        ? "btn_primary_fill"
+                                        : "btn_primary"
+                                } btn-sm`}
+                            >
+                                Non-Profitable Corporation
+                            </button>
+                        </section>
+                    </Switch.Case>
+                </Switch>
+            </section>
         </div>
     );
 };
 
 export default QuickBusinessWizardForm;
 
-const ShowPath = ({ path }) => {
-    return;
+const ShowPath = ({
+    paths,
+    setPath,
+    setOption,
+}: {
+    paths: Option_type[];
+    setPath: Dispatch<SetStateAction<Option_type[]>>;
+    setOption: Dispatch<SetStateAction<Option_type>>;
+}) => {
+    return (
+        <section>
+            {[...paths].map((path, i) => {
+                return (
+                    <span className="text-xs text-gray-500" key={i}>
+                        {i > 0 && "->"}{" "}
+                        <button
+                            className="hover:underline"
+                            onClick={() => {
+                                setOption(path);
+                                setPath((prev) => {
+                                    const paths = [...prev].slice(0, i + 1);
+                                    return paths;
+                                });
+                            }}
+                        >
+                            {path}
+                        </button>{" "}
+                    </span>
+                );
+            })}
+        </section>
+    );
 };

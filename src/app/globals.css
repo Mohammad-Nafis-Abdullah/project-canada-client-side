@@ -9,9 +9,9 @@
   }
 
   .btn_primary {
-    @apply px-[15px] py-[5px] border border-[#1769aa] rounded-sm text-[#1769aa];
+    @apply px-[15px] py-[5px] border border-[#1769aa] rounded text-[#1769aa];
   }
   .btn_primary_fill {
-    @apply px-[15px] py-[5px] border border-[#1769aa] bg-[#1769aa] rounded-sm text-white;
+    @apply px-[15px] py-[5px] border border-[#1769aa] bg-[#1769aa] rounded text-white;
   }
 }
